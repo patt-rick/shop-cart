@@ -63,7 +63,7 @@ export const Cart: React.FC = () => {
                                                     {item.product.name}
                                                 </h3>
                                                 <p className="text-gray-600">
-                                                    ${item.product.price.toFixed(2)}
+                                                    GHS {item.product.price.toFixed(2)}
                                                 </p>
                                             </div>
 
@@ -80,7 +80,9 @@ export const Cart: React.FC = () => {
                         <div className="p-4 border-t">
                             <div className="flex justify-between items-center mb-4">
                                 <span className="font-semibold">Total:</span>
-                                <span className="text-xl font-bold">${state.total.toFixed(2)}</span>
+                                <span className="text-xl font-bold">
+                                    GHS {state.total.toFixed(2)}
+                                </span>
                             </div>
                             <button
                                 className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
