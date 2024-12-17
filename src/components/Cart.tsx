@@ -51,26 +51,29 @@ export const Cart: React.FC = () => {
                                     {state.items.map((item) => (
                                         <div
                                             key={item.product.id}
-                                            className="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg"
+                                            className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 space-x-4 bg-gray-50 p-4 rounded-lg"
                                         >
-                                            <img
-                                                src={item.product.image}
-                                                alt={item.product.name}
-                                                className="w-16 h-16 object-cover rounded"
-                                            />
-                                            <div className="flex-1">
-                                                <h3 className="font-semibold">
-                                                    {item.product.name}
-                                                </h3>
-                                                <p className="text-gray-600">
-                                                    GHS {item.product.price.toFixed(2)}
-                                                </p>
+                                            <div className="flex items-center space-x-4">
+                                                <img
+                                                    src={item.product.image}
+                                                    alt={item.product.name}
+                                                    className="w-16 h-16 object-cover rounded"
+                                                />
+                                                <div className="flex-1">
+                                                    <h3 className="font-semibold">
+                                                        {item.product.name}
+                                                    </h3>
+                                                    <p className="text-gray-600">
+                                                        GHS {item.product.price.toFixed(2)}
+                                                    </p>
+                                                </div>
                                             </div>
-
-                                            <NumberControl
-                                                quantity={item.quantity}
-                                                id={item.product.id}
-                                            />
+                                            <div className="flex justify-end w-full pr-3 sm:pr-0 sm:w-fit">
+                                                <NumberControl
+                                                    quantity={item.quantity}
+                                                    id={item.product.id}
+                                                />
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
