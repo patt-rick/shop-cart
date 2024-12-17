@@ -6,7 +6,7 @@ import { ProductCard } from "./components/ProductCard";
 import { ProductDetails } from "./components/ProductDetails";
 import { Cart } from "./components/Cart";
 import { SearchBar } from "./components/SearchBar";
-import { ShoppingBag } from "lucide-react";
+import { Frown, ShoppingBag } from "lucide-react";
 
 function App() {
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -46,6 +46,14 @@ function App() {
                                 onViewDetails={setSelectedProduct}
                             />
                         ))}
+                    </div>
+                    <div>
+                        {filteredProducts.length === 0 && (
+                            <div className="text-center text-2xl w-full">
+                                <Frown className="w-24 h-24 mx-auto text-gray-400" />
+                                <p className="mt-6 italic">No products found.</p>
+                            </div>
+                        )}
                     </div>
                 </main>
 
