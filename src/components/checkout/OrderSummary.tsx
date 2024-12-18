@@ -7,8 +7,8 @@ interface OrderSummaryProps {
 }
 
 export const OrderSummary: React.FC<OrderSummaryProps> = ({ items, total }) => {
-    const shipping = 0; // Free shipping
-    const tax = total * 0.1; // 10% tax
+    const shipping = 0;
+    const tax = total * 0.1;
     const finalTotal = total + shipping + tax;
 
     return (
