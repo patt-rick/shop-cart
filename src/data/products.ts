@@ -70,4 +70,34 @@ export const products = [
         category: "fitness",
         stock: 10,
     },
+
+    {
+        id: "10",
+        name: "Leather Wallet",
+        price: 59.99,
+        description: "Slim leather wallet with RFID blocking technology and multiple card slots.",
+        image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80",
+        category: "accessories",
+        stock: 35,
+    },
+    {
+        id: "11",
+        name: "Smart Plant Pot",
+        price: 44.99,
+        description:
+            "Self-watering plant pot with soil moisture monitoring and mobile app integration.",
+        image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80",
+        category: "home",
+        stock: 15,
+    },
+    {
+        id: "12",
+        name: "Resistance Bands Set",
+        price: 29.99,
+        description:
+            "Complete set of resistance bands for home workouts. Includes carry bag and exercise guide.",
+        image: "https://images.unsplash.com/photo-1517344368193-41552b6ad3f5?auto=format&fit=crop&w=800&q=80",
+        category: "fitness",
+        stock: 40,
+    },
 ];

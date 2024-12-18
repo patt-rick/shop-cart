@@ -1,10 +1,12 @@
-import { ShoppingCart, X } from "lucide-react";
+import { PackageCheck, ShoppingCart, X } from "lucide-react";
 import React from "react";
 import { useCart } from "../context/CartContext";
 import NumberControl from "./NumberControl";
+import { CheckoutForm } from "./checkout/CheckoutForm";
 
 export const Cart: React.FC = () => {
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isCheckoutOpen, setIsCheckoutOpen] = React.useState(false);
     const { state } = useCart();
 
     return (
@@ -88,15 +90,21 @@ export const Cart: React.FC = () => {
                                 </span>
                             </div>
                             <button
-                                className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                onClick={() => {
+                                    setIsCheckoutOpen(true);
+                                    setIsOpen(false);
+                                }}
+                                className="flex justify-center items-center w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                 disabled={state.items.length === 0}
                             >
+                                <PackageCheck className="w-6 h-6 mr-2" />
                                 Proceed to Checkout
                             </button>
                         </div>
                     </div>
                 </div>
             )}
+            {isCheckoutOpen && <CheckoutForm onClose={() => setIsCheckoutOpen(false)} />}
         </>
     );
 };
